@@ -1,8 +1,7 @@
 import React from "react";
-import ContactDetails from "../components/ContactDetails";
 import ContactMeForm from "../components/ContactMeForm";
 
-const ContactMe = () => {
+const ContactMe: React.FC = () => {
   return (
     <>
       {/* <ContactDetails /> */}

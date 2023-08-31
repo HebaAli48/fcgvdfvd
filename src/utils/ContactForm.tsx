@@ -10,7 +10,7 @@ interface ContactFormProps {
   title: string;
 }
 
-const ContactForm = ({ title }: ContactFormProps) => {
+const ContactForm: React.FC<ContactFormProps> = ({ title }) => {
   const [isLoading, setIsLoading] = useState(false);
   const { theme } = useContext(ThemeContext);
 
@@ -94,7 +94,7 @@ const ContactForm = ({ title }: ContactFormProps) => {
                 />
               </div>
             </div>
-            <p className="text-red-500  md:mx-32 text-base mb-3">
+            <p className="text-red-400  md:mx-40 text-base mb-3">
               {errors.user_name?.message}
             </p>
 
@@ -118,7 +118,7 @@ const ContactForm = ({ title }: ContactFormProps) => {
                 />
               </div>
             </div>
-            <p className="text-red-500  md:mx-32 text-base mb-3">
+            <p className="text-red-400  md:mx-40 text-base mb-3">
               {errors.user_email?.message}
             </p>
 
@@ -142,7 +142,7 @@ const ContactForm = ({ title }: ContactFormProps) => {
                 />
               </div>
             </div>
-            <p className="text-red-500  md:mx-32 text-base mb-3">
+            <p className="text-red-400  md:mx-40 text-base mb-3">
               {errors.user_subject?.message}
             </p>
 
@@ -162,12 +162,12 @@ const ContactForm = ({ title }: ContactFormProps) => {
                   id="message"
                   {...register("message", { required: true })}
                   name="message"
-                  rows="6"
+                  rows={6}
                   placeholder="Message"
                 ></textarea>
               </div>
             </div>
-            <p className="text-red-500  md:mx-32 text-base mb-3">
+            <p className="text-red-400  md:mx-40 text-base mb-3">
               {errors.message?.message}
             </p>
             {/* send button */}
@@ -179,7 +179,7 @@ const ContactForm = ({ title }: ContactFormProps) => {
                 </Button>
               </div>
             </div>
-            <p className="text-red-500  md:mx-32 text-base mb-3">
+            <p className="text-red-400  md:mx-40 text-base mb-3">
               {errors.error?.message}
             </p>
           </form>

@@ -1,11 +1,10 @@
-
+import React from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import { Outlet } from "react-router-dom";
 // import Loader from "../ui/Loader";
 
-const AppLayout = () => {
-
+const AppLayout: React.FC = () => {
   return (
     <div className="flex flex-col">
       <Header />

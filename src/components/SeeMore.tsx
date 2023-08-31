@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Forword } from "../utils/Icons";
 
-const SeeMore = () => {
+const SeeMore: React.FC = () => {
   return (
     <Link
       to="/"

@@ -12,19 +12,19 @@ interface Project {
   readMeLink: string;
 }
 
-interface projectsProps {
+interface ProjectsProps {
   projects: Project[];
 }
 
-const ProjectsList = ({ projects }: projectsProps) => {
+const ProjectsList: React.FC<ProjectsProps> = ({ projects }) => {
   const { theme } = useContext(ThemeContext);
-  const [hoverCard, setHoverCard] = useState(null);
+  const [hoverCard, setHoverCard] = useState<number | null>(null);
 
-  const handleCardMouseEnter = (id) => {
+  const handleCardMouseEnter = (id: number) => {
     setHoverCard(id);
   };
 
-  const handleCardMouseLeave = (id) => {
+  const handleCardMouseLeave = () => {
     setHoverCard(null);
   };
 
@@ -45,14 +45,14 @@ const ProjectsList = ({ projects }: projectsProps) => {
             key={project.id}
             className="relative shadow-xl border border-slate-200 rounded-md pb-6 md:w-[20rem] mx-auto"
           >
-            <Link to={`${project.link}`}>
+            <Link to={`${project.link}`} target="_blank">
               <div
                 className="relative group"
                 onMouseEnter={() => {
                   handleCardMouseEnter(project.id);
                 }}
                 onMouseLeave={() => {
-                  handleCardMouseLeave(project.id);
+                  handleCardMouseLeave();
                 }}
               >
                 <img
@@ -63,7 +63,7 @@ const ProjectsList = ({ projects }: projectsProps) => {
                 {hoverCard === project.id && (
                   <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity">
                     <Link to={`${project.link}`} target="_blank">
-                      <Button className="px-3 py-1 ">Visit</Button>
+                      <Button className="px-3 py-1">Visit</Button>
                     </Link>
                   </div>
                 )}

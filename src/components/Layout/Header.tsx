@@ -1,3 +1,4 @@
+import React from "react";
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { envelope, Dark, Light } from "../../utils/Icons";
@@ -6,7 +7,8 @@ import { Menu } from "../../utils/Icons";
 import MyLogo from "../../utils/MyLogo";
 import NavBar from "./NavBar";
 import { ThemeContext } from "../../utils/ThemeContext";
-const Header = () => {
+
+const Header: React.FC = () => {
   const [isCollapsed, setIsCollapsed] = useState(true);
   const { theme, setTheme } = useContext(ThemeContext);
 

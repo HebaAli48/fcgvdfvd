@@ -19,6 +19,7 @@ const ContactSchema = yup.object().shape({
     .string()
     .required("Message is required")
     .min(4, "messgae must be at least 4 characters"),
+  error: yup.string(),
 });
 
 export default ContactSchema;

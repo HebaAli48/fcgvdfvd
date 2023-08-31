@@ -2,7 +2,7 @@ import Button from "../utils/Button";
 import { Download } from "../utils/Icons";
 import CV from "../assets/files/Heba Mohammed -Full Stack Web Developer--Mearn.pdf";
 
-const DownloadCv = () => {
+const DownloadCv: React.FC = () => {
   return (
     <>
       <a

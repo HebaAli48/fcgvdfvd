@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import aboutImg from "../assets/images/about-img.png";
 import { ThemeContext } from "../utils/ThemeContext";
-const AboutComponent = () => {
+const AboutComponent: React.FC = () => {
   const { theme } = useContext(ThemeContext);
 
   return (

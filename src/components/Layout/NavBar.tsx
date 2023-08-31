@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { ThemeContext } from "../../utils/ThemeContext";
 
-const NavBar = () => {
+const NavBar: React.FC = () => {
   const location = useLocation();
   const { theme } = useContext(ThemeContext);
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { mailIcon, MapMark, Phone } from "../utils/Icons";
 
-const ContactDetails = () => {
+const ContactDetails: React.FC = () => {
   const contacts = [
     {
       id: 1,

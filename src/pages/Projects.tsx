@@ -3,7 +3,7 @@ import ProjectsList from "../components/ProjectsList";
 import SeeMore from "../components/SeeMore";
 import projects from "../utils/ProjectsList";
 
-const Projects = () => {
+const Projects: React.FC = () => {
   return (
     <>
       <div className={` container   `} id="projects">

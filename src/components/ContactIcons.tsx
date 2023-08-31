@@ -1,7 +1,7 @@
 import { GitHub, FaceBook, LinkedIn } from "../utils/Icons";
 import { Link } from "react-router-dom";
 
-const ContactIcons = () => {
+const ContactIcons: React.FC = () => {
   const buttonStyle =
     " bg-slate-200 border-2 rounded-lg p-2 hover:scale-110 shadow-md hover:shadow-lg hover:bg-slate-300";
   return (

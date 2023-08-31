@@ -1,10 +1,10 @@
-import { Link } from "react-router-dom";
+import React from "react";
 import ContactIcons from "../ContactIcons";
 import NavBar from "./NavBar";
 import { useContext } from "react";
 import { ThemeContext } from "../../utils/ThemeContext";
 
-const Footer = () => {
+const Footer: React.FC = () => {
   const { theme } = useContext(ThemeContext);
 
   return (

@@ -1,7 +1,7 @@
 import React from "react";
 import HireMeForm from "../components/HireMeForm";
 
-const HireMe = () => {
+const HireMe: React.FC = () => {
   return (
     <>
       <HireMeForm />

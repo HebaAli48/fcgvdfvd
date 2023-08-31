@@ -1,10 +1,8 @@
-import React from 'react'
-import AboutComponent from '../components/AboutComponent'
+import React from "react";
+import AboutComponent from "../components/AboutComponent";
 
-const AboutMe = () => {
-  return (
-    <AboutComponent/>
-  )
-}
+const AboutMe: React.FC = () => {
+  return <AboutComponent />;
+};
 
-export default AboutMe
+export default AboutMe;
