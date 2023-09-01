@@ -1,6 +1,6 @@
 const GitHub = (
   <svg
-    className="w-7 h-7 text-gray-800 dark:text-white"
+    className="w-7 h-7 text-gray-800 "
     aria-hidden="true"
     xmlns="http://www.w3.org/2000/svg"
     fill="currentColor"
@@ -15,7 +15,7 @@ const GitHub = (
 );
 const FaceBook = (
   <svg
-    className="w-7 h-7 text-gray-800 dark:text-white"
+    className="w-7 h-7 text-gray-800 "
     aria-hidden="true"
     xmlns="http://www.w3.org/2000/svg"
     fill="currentColor"
@@ -30,7 +30,7 @@ const FaceBook = (
 );
 const LinkedIn = (
   <svg
-    className="w-7 h-7 text-gray-800 dark:text-white "
+    className="w-7 h-7 text-gray-800  "
     aria-hidden="true"
     xmlns="http://www.w3.org/2000/svg"
     fill="currentColor"

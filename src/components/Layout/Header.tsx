@@ -24,7 +24,7 @@ const Header: React.FC = () => {
     <nav
       className={` ${
         theme === "light" ? "text-lightTheme" : "text-darkTheme"
-      } border-b ${isCollapsed ? "pb-4" : "pb-40"} pt-3 sm:pb-3`}
+      } border-b ${isCollapsed ? "pb-4" : "pb-32"} pt-3 sm:pb-3`}
     >
       <div className="container">
         <div className="flex items-center relative justify-between">
@@ -45,7 +45,7 @@ const Header: React.FC = () => {
           <div
             className={`${
               isCollapsed ? "hidden" : ""
-            }   absolute w-[150px] top-5 sm:block sm:relative py-5  pr-2 sm:text-center sm:top-0 grow bg-inherit `}
+            }   absolute w-[150px]  top-14 sm:block sm:relative py-5 my-auto  pr-2 sm:text-center sm:top-0 grow bg-inherit `}
           >
             <ul className="sm:flex justify-center sm:space-x-2 md:space-x-8 items-center w-4/5 m-auto text-lg">
               <NavBar />
@@ -54,7 +54,7 @@ const Header: React.FC = () => {
           <div className=" order-last  flex flex-col sm:flex-row gap-2 justify-center items-center">
             {/* hire button */}
             <Link to="/hire-Me">
-              <Button className="ms-2  flex flex-col sm:flex-row gap-1 ">
+              <Button className="text-sm flex flex-col sm:flex-row gap-1 ">
                 <span>{envelope}</span>
                 <span> Hire me</span>
               </Button>

@@ -17,7 +17,7 @@ const AboutComponent: React.FC = () => {
         <div className="container mx-auto grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center justify-center md:justify-between">
           <div className="about-info lg:col-span-2">
             <h2
-              className={`text-5xl font-bold italic mb-5  pl-2 w-fit  pb-2  `}
+              className={`text-4xl sm:text-5xl font-bold italic mb-5  pl-2 w-fit  pb-2  `}
             >
               About Me
             </h2>

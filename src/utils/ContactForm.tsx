@@ -29,7 +29,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ title }) => {
   const onSubmitHandler = async (data: any) => {
     const emailData = {
       user_name: data.user_name,
-      user_emil: data.user_email,
+      user_email: data.user_email,
       user_subject: data.user_subject,
       message: data.message,
       title: title,
@@ -84,7 +84,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ title }) => {
                   Name
                 </label>
               </div>
-              <div className="md:w-2/3">
+              <div className=" w-[85%] md:w-2/3">
                 <input
                   className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-sky-700"
                   id="user_name"
@@ -108,7 +108,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ title }) => {
                   Email
                 </label>
               </div>
-              <div className="md:w-2/3">
+              <div className="w-[85%] md:w-2/3">
                 <input
                   className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-sky-700"
                   id="user_email"
@@ -132,7 +132,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ title }) => {
                   Subject
                 </label>
               </div>
-              <div className="md:w-2/3">
+              <div className="w-[85%] md:w-2/3">
                 <input
                   className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-sky-700"
                   id="user_subject"
@@ -156,7 +156,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ title }) => {
                   Message
                 </label>
               </div>
-              <div className="md:w-2/3">
+              <div className="w-[85%] md:w-2/3">
                 <textarea
                   className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-sky-700"
                   id="message"
@@ -173,7 +173,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ title }) => {
             {/* send button */}
             <div className="md:flex md:items-center">
               <div className="md:w-40"></div>
-              <div className="md:w-2/3 text-center ">
+              <div className="w-[85%] md:w-2/3 text-center ">
                 <Button type="submit" className="px-4 ">
                   {!isLoading ? "Send" : "Loading..."}
                 </Button>

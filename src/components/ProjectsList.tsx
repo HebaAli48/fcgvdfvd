@@ -32,9 +32,9 @@ const ProjectsList: React.FC<ProjectsProps> = ({ projects }) => {
     <>
       <h2
         className={`
-      text-5xl font-bold italic mb-5 pl-2 w-fit pb-2 mt-8 pb-2${
-        theme === "light" ? " text-lightTheme" : " text-darkTheme"
-      }`}
+        text-4xl sm:text-5xl font-bold italic mb-5 pl-2 w-fit pb-2 mt-8 pb-2${
+          theme === "light" ? " text-lightTheme" : " text-darkTheme"
+        }`}
       >
         My Projects
       </h2>
