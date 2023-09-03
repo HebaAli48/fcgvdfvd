@@ -27,19 +27,9 @@ export default {
           "60%": { transform: "rotate(0.0deg)" },
           "100%": { transform: "rotate(0.0deg)" },
         },
-        fadeInLeft: {
-          "0%": { opacity: "0", transform: "translateX(-20px)" },
-          "100%": { opacity: "1", transform: "translateX(0)" },
-        },
-        fadeInRight: {
-          "0%": { opacity: "0", transform: "translateX(20px)" },
-          "100%": { opacity: "1", transform: "translateX(0)" },
-        },
       },
       animation: {
         "waving-hand": "wave 2s linear infinite",
-        "fade-in-left": "fadeInLeft 1s ease-in-out",
-        "fade-in-right": "fadeInRight 1s ease-in-out",
       },
     },
 
