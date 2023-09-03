@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const ContactIcons: React.FC = () => {
   const buttonStyle =
-    " bg-slate-300 text-black border-2 rounded-lg p-2 hover:scale-110 shadow-md hover:shadow-lg hover:bg-slate-400";
+    " bg-slate-200 text-black border-2 rounded-lg p-2 hover:scale-110 shadow-md hover:shadow-lg hover:bg-slate-300";
   return (
     <>
       <div className="mb-5 flex gap-2 sm:gap-5 ">
