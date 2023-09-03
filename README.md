@@ -1,27 +1,58 @@
-# React + TypeScript + Vite
+# Portfolio Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is my portfolio website built using React, Vite, Tailwind CSS, and TypeScript. The web page includes a light and dark theme feature. It showcases my projects and provides information about me as a developer.
 
-Currently, two official plugins are available:
+## Table of Contents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Getting Started](#getting-started)
+- [Usage](#usage)
+- [Themes](#themes)
+- [Technologies Used](#technologies-used)
+- [Packages Used](#packages-used)
+- [Demo](#demo)
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+To get started with this portfolio, follow these steps:
 
-- Configure the top-level `parserOptions` property like this:
+1. Clone the repository to your local machine:
+   `  git clone https://github.com/HebaAli48/portfolioVite.git`
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+2. Install portfolio dependencies using npm:
+   npm install
+3. Start the development server:
+   npm run dev
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Usage
+
+You can use this portfolio template to showcase your own projects and provide information about yourself. Customize the content by editing the source code and adding your own project details.
+
+## Themes
+
+This portfolio includes both light and dark themes. Users can toggle between themes using the theme switcher button.
+
+## Technologies Used
+
+React: A JavaScript library for building user interfaces.
+Vite: A fast build tool for web development.
+Tailwind CSS: A utility-first CSS framework.
+TypeScript: A statically typed superset of JavaScript.
+
+## Packages Used
+
+@emailjs/browser: A library for sending email from your web app.
+@hookform/resolvers: A validation resolver for React Hook Form.
+framer-motion: A library for animations in React.
+react-router: A library for routing in React applications.
+react-router-dom: DOM bindings for React Router.
+yup: A library for schema validation.
+
+To install these dependencies, use npm install as mentioned in the "Getting Started" section.
+
+## Demo
+
+Visit my portfolio and feel free to explore my projects and contact me with your feedback:
+
+`https://portfolio-heba-ali.netlify.app/`
+
+Enjoy your visit, and don't hesitate to reach out with your comments or questions through the contact form on the websit

@@ -3,7 +3,6 @@ import aboutImg from "../assets/images/about-img.png";
 import { ThemeContext } from "../utils/ThemeContext";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { number } from "yup";
 const AboutComponent: React.FC = () => {
   const { theme } = useContext(ThemeContext);
   const [refH2, inViewH2] = useInView({
