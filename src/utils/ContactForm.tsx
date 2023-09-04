@@ -98,6 +98,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ title }) => {
                     {...register("user_name", { required: true })}
                     name="user_name"
                     type="text"
+                    placeholder="Name *"
                   />
                 </div>
               </div>
@@ -122,6 +123,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ title }) => {
                     {...register("user_email", { required: true })}
                     name="user_email"
                     type="text"
+                    placeholder="Email *"
                   />
                 </div>
               </div>
@@ -146,6 +148,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ title }) => {
                     {...register("user_subject", { required: true })}
                     name="user_subject"
                     type="text"
+                    placeholder="Subject *"
                   />
                 </div>
               </div>
@@ -170,7 +173,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ title }) => {
                     {...register("message", { required: true })}
                     name="message"
                     rows={6}
-                    placeholder="Message"
+                    placeholder="Message *"
                   ></textarea>
                 </div>
               </div>
