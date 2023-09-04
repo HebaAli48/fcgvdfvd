@@ -33,19 +33,19 @@ This portfolio includes both light and dark themes. Users can toggle between the
 
 ## Technologies Used
 
-React: A JavaScript library for building user interfaces.
-Vite: A fast build tool for web development.
-Tailwind CSS: A utility-first CSS framework.
-TypeScript: A statically typed superset of JavaScript.
+- React: A JavaScript library for building user interfaces.
+- Vite: A fast build tool for web development.
+- Tailwind CSS: A utility-first CSS framework.
+- TypeScript: A statically typed superset of JavaScript.
 
 ## Packages Used
 
-@emailjs/browser: A library for sending email from your web app.
-@hookform/resolvers: A validation resolver for React Hook Form.
-framer-motion: A library for animations in React.
-react-router: A library for routing in React applications.
-react-router-dom: DOM bindings for React Router.
-yup: A library for schema validation.
+- @emailjs/browser: A library for sending email from your web app.
+- @hookform/resolvers: A validation resolver for React Hook Form.
+- framer-motion: A library for animations in React.
+- react-router: A library for routing in React applications.
+- react-router-dom: DOM bindings for React Router.
+- yup: A library for schema validation.
 
 To install these dependencies, use npm install as mentioned in the "Getting Started" section.
 
