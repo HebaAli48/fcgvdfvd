@@ -24,7 +24,7 @@ const Footer: React.FC = () => {
       <ul className="flex flex-col xs:flex-row justify-center space-x-3 md:space-x-8 items-center w-4/5 m-auto text-lg">
         <NavBar />
       </ul>
-      <div className="text-6xl text-center text-btn-primary ">Follow me</div>
+      <div className="text-6xl text-center text-btn-primary ">Contact me</div>
       <div className="flex  justify-center items-center">
         <ContactIcons />
       </div>

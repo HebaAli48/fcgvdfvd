@@ -1,6 +1,6 @@
 import React from "react";
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { envelope, Dark, Light } from "../../utils/Icons";
 import Button from "../../utils/Button";
 import { Menu } from "../../utils/Icons";
@@ -9,8 +9,11 @@ import NavBar from "./NavBar";
 import { ThemeContext } from "../../utils/ThemeContext";
 
 const Header: React.FC = () => {
-  const [isCollapsed, setIsCollapsed] = useState(true);
+  const [isCollapsed, setIsCollapsed] = useState<boolean>(true);
+
   const { theme, setTheme } = useContext(ThemeContext);
+  const location = useLocation();
+  const path = location.pathname.split("/")[1];
 
   const themeToggle = () => {
     if (theme === "light") {
@@ -22,9 +25,15 @@ const Header: React.FC = () => {
 
   return (
     <nav
-      className={` ${
+      className={`${
         theme === "light" ? "text-lightTheme" : "text-darkTheme"
-      } border-b ${isCollapsed ? "pb-4" : "pb-32"} pt-3 sm:pb-3`}
+      } border-b ${
+        isCollapsed
+          ? "pb-4"
+          : path === "contact-Me" || path === "hire-Me"
+          ? "pb-20"
+          : "pb-28"
+      } pt-3 sm:pb-3`}
     >
       <div className="container">
         <div className="flex items-center relative justify-between">
@@ -48,7 +57,7 @@ const Header: React.FC = () => {
             }   absolute w-[150px]  top-14 sm:block sm:relative py-5 my-auto  pr-2 sm:text-center sm:top-0 grow bg-inherit `}
           >
             <ul className="sm:flex justify-center sm:space-x-2 md:space-x-8 items-center w-4/5 m-auto text-lg">
-              <NavBar />
+              <NavBar setIsCollapsed={setIsCollapsed} />
             </ul>
           </div>
           <div className=" order-last  flex flex-col sm:flex-row gap-2 justify-center items-center">

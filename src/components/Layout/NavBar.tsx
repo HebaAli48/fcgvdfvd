@@ -2,12 +2,17 @@ import React, { useContext } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { ThemeContext } from "../../utils/ThemeContext";
 
-const NavBar: React.FC = () => {
+interface NavBarProps {
+  setIsCollapsed: (value: boolean) => void; // Corrected the type here
+}
+
+const NavBar: React.FC<NavBarProps> = ({ setIsCollapsed }) => {
   const location = useLocation();
   const { theme } = useContext(ThemeContext);
 
   const path = location.pathname.split("/")[1];
   const navStyle: string = "hover:border-b-2  py-1 transition";
+
   return (
     <>
       {path === "contact-Me" || path === "hire-Me" ? (
@@ -19,6 +24,7 @@ const NavBar: React.FC = () => {
                 : "text-darkTheme hover:border-darkTheme "
             }`}
             to="/"
+            onClick={() => setIsCollapsed(true)}
           >
             Home
           </Link>
@@ -60,6 +66,7 @@ const NavBar: React.FC = () => {
               ? "text-lightTheme hover:border-lightTheme "
               : "text-darkTheme hover:border-darkTheme "
           }`}
+          onClick={() => setIsCollapsed(true)}
         >
           Contact Me
         </NavLink>
