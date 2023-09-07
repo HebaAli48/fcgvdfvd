@@ -30,7 +30,7 @@ const FaceBook = (
 );
 const LinkedIn = (
   <svg
-    className="w-8 h-8 text-gray-800  "
+    className="w-7 h-7 text-gray-800  "
     aria-hidden="true"
     xmlns="http://www.w3.org/2000/svg"
     fill="currentColor"
@@ -47,7 +47,7 @@ const LinkedIn = (
 const Whasapp = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    className="w-8 h-8 text-gray-800  "
+    className="w-7 h-7 text-gray-800  "
     aria-hidden="true"
     viewBox="0 0 24 24"
   >
