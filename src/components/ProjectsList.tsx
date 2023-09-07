@@ -112,6 +112,7 @@ const ProjectsList: React.FC<ProjectsProps> = ({ projects }) => {
                   >
                     {`${project.description.slice(0, 80)}...`}
                     <Link
+                      target="_blank"
                       to={`${project.readMeLink}`}
                       className="underline text-btn-primary"
                     >
