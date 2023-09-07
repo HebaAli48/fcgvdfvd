@@ -17,6 +17,7 @@ const SeeMore: React.FC = () => {
     >
       <Link
         to="https://github.com/HebaAli48?tab=repositories"
+        target="_blank"
         className="mb-2 flex gap-1 items-center text-lg text-btn-primary hover:translate-x-[2px] hover:text-sky-400 transition-all"
       >
         <span className="ml-auto">More Projects </span> <span>{Forword}</span>
