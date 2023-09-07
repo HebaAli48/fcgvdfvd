@@ -1,4 +1,4 @@
-import { GitHub, FaceBook, LinkedIn } from "../utils/Icons";
+import { GitHub, FaceBook, LinkedIn, Whasapp } from "../utils/Icons";
 import { Link } from "react-router-dom";
 
 const ContactIcons: React.FC = () => {
@@ -16,6 +16,10 @@ const ContactIcons: React.FC = () => {
         >
           {" "}
           <button className={buttonStyle}>{FaceBook}</button>
+        </Link>
+        <Link target="_blank" to="https://wa.me/201095792724">
+          {" "}
+          <button className={buttonStyle}>{Whasapp}</button>
         </Link>
         <Link
           target="_blank"
