@@ -1,7 +1,7 @@
 // import { useState } from 'react'
 import "./App.css";
 import AboutMe from "./pages/AboutMe";
-import { Suspense, lazy } from "react";
+import { Suspense } from "react";
 
 import { Route, Routes } from "react-router";
 import AppLayout from "./components/Layout/AppLayout";

@@ -3,7 +3,7 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 import { ThemeContext } from "../../utils/ThemeContext";
 
 interface NavBarProps {
-  setIsCollapsed: (value: boolean) => void; // Corrected the type here
+  setIsCollapsed?: (value: boolean) => void;
 }
 
 const NavBar: React.FC<NavBarProps> = ({ setIsCollapsed }) => {
@@ -24,7 +24,11 @@ const NavBar: React.FC<NavBarProps> = ({ setIsCollapsed }) => {
                 : "text-darkTheme hover:border-darkTheme "
             }`}
             to="/"
-            onClick={() => setIsCollapsed(true)}
+            onClick={() => {
+              if (setIsCollapsed) {
+                setIsCollapsed(true);
+              }
+            }}
           >
             Home
           </Link>
@@ -66,7 +70,11 @@ const NavBar: React.FC<NavBarProps> = ({ setIsCollapsed }) => {
               ? "text-lightTheme hover:border-lightTheme "
               : "text-darkTheme hover:border-darkTheme "
           }`}
-          onClick={() => setIsCollapsed(true)}
+          onClick={() => {
+            if (setIsCollapsed) {
+              setIsCollapsed(true);
+            }
+          }}
         >
           Contact Me
         </NavLink>
