@@ -1,6 +1,4 @@
 
----
-
 ## README for Jenkins and Docker with GitHub Webhook Integration
 
 ### Prerequisites
@@ -114,5 +112,5 @@ Add the DockerHub username as USERNAME and password as PASSWORD credentials and 
 2. Verify that the Jenkins job starts automatically and builds the Docker image.
 3. Check the Jenkins console logs to confirm the Docker image was pushed to your repository.
 
----
+
 
