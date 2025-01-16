@@ -1,58 +1,116 @@
-# Portfolio Project
 
-This is my portfolio website built using React, Vite, Tailwind CSS, and TypeScript. The web page includes a light and dark theme feature. It showcases my projects and provides information about me as a developer.
+## README for Jenkins and Docker with GitHub Webhook Integration
 
-## Table of Contents
+### Prerequisites
 
-- [Getting Started](#getting-started)
-- [Usage](#usage)
-- [Themes](#themes)
-- [Technologies Used](#technologies-used)
-- [Packages Used](#packages-used)
-- [Demo](#demo)
+1. **Install Docker with Jenkins Container**  
+   Run the following command to start a Jenkins container:
+   ```bash
+   docker run -d \
+     --name jenkinsDocker \
+     -v /var/run/docker.sock:/var/run/docker.sock \
+     -v jenkins_home:/var/jenkins_home \
+     -p 8080:8080 \
+     -p 50000:50000 \
+     -v $(which docker):/usr/bin/docker \
+     jenkins/jenkins:lts
+   ```
+   If Docker is not installed, refer to the [Docker installation guide](https://docs.docker.com/get-docker/).
 
-## Getting Started
+2. **Open Jenkins**  
+   Access Jenkins by navigating to [http://localhost:8080/](http://localhost:8080/).
 
-To get started with this portfolio, follow these steps:
+3. **Install Required Plugins in Jenkins**  
+   - **Git Plugin**: For cloning GitHub repositories.
+   - **Docker Plugin**: For Docker integration.
+   - **GitHub Integration Plugin**: For webhook integration.
 
-1. Clone the repository to your local machine:
-   `  git clone https://github.com/HebaAli48/portfolioVite.git`
+---
 
-2. Install portfolio dependencies using npm:
-   npm install
-3. Start the development server:
-   npm run dev
+### Steps to Configure the Jenkins Job
 
-## Usage
+1. **Create a New Freestyle Job**
+   - Open the Jenkins dashboard.
+   - Click on **"New Item"**, enter a name, select **"Freestyle project"**, and click **"OK"**.
 
-You can use this portfolio template to showcase your own projects and provide information about yourself. Customize the content by editing the source code and adding your own project details.
+2. **Configure the Source Code Management**
+   - Select **Git**.
+   - Enter the repository URL (e.g., `https://github.com/HebaAli48/simplePortofolio.git`).
+   - Provide credentials if the repository is private.
 
-## Themes
+3. **Add Build Trigger**
+   - Go to the **"Build Triggers"** section.
+   - Select **"GitHub hook trigger for GITScm polling"**.
 
-This portfolio includes both light and dark themes. Users can toggle between themes using the theme switcher button.
+4. **Add DockerHub Credentials**
+   - In the **"Build Environment"** section, select **"Use secret text(s) or file(s)"**.
+   - Add the DockerHub username and password credentials by following these steps:
+     - Open Jenkins dashboard, click **"Manage Jenkins"**, then **"Manage Credentials"**.
+     - Select the appropriate domain or **"(global)"**.
+     - Click **"Add Credentials"**.
+     - Set **Kind** to **"Username with password"**.
+     - Enter **Username** (e.g., `hebaali4`), **Password** (DockerHub password or access token).
+     - Set **ID** (e.g., `dockerhub-credentials`) and **Description**.
+     - Save the credentials.
+   - **Reference the credentials in the build step as follows:**
 
-## Technologies Used
+In the "Build Environment" section, select "Use secret text(s) or file(s)".
+Add the DockerHub username as USERNAME and password as PASSWORD credentials and select the Specific credentials which set above in same point.
 
-- React: A JavaScript library for building user interfaces.
-- Vite: A fast build tool for web development.
-- Tailwind CSS: A utility-first CSS framework.
-- TypeScript: A statically typed superset of JavaScript.
+5. **Add Build Steps**
+   - Scroll to the **"Build"** section and add an **"Execute Shell"** step.
+   - Paste the following commands:
+     ```bash
+     docker --version
+     docker build -t hebaali4/portfolio .
+     docker login -u $USERNAME -p $PASSWORD
+     docker push hebaali4/portfolio
+     ```
 
-## Packages Used
+6. **Save the Job**  
+   Click **"Save"** to finalize the job configuration.
 
-- @emailjs/browser: A library for sending email from your web app.
-- @hookform/resolvers: A validation resolver for React Hook Form.
-- framer-motion: A library for animations in React.
-- react-router: A library for routing in React applications.
-- react-router-dom: DOM bindings for React Router.
-- yup: A library for schema validation.
+---
 
-To install these dependencies, use npm install as mentioned in the "Getting Started" section.
+### Configure GitHub Webhook
 
-## Demo
+1. **Go to Your GitHub Repository Settings**
+   - Navigate to **Settings > Webhooks**.
 
-Visit my portfolio and feel free to explore my projects and contact me with your feedback:
+2. **Add a New Webhook**
+   - Click **"Add webhook"**.
+   - In the **"Payload URL"**, enter the ngrok URL followed by `/github-webhook/`. For example:
+     ```
+     http://<ngrok-generated-url>/github-webhook/
+     ```
+   - Set the **Content type** to `application/json`.
+   - Choose **"Just the push event"** under "Which events would you like to trigger this webhook?".
+   - Click **"Add webhook"**.
 
-`https://portfolio-heba-ali.netlify.app/`
+---
 
-Enjoy your visit, and don't hesitate to reach out with your comments or questions through the contact form on the websit
+### Using Ngrok for Public Access
+
+1. **Install Ngrok**  
+   If Ngrok is not installed, download and install it from the [Ngrok website](https://dashboard.ngrok.com/get-started/setup/linux).
+
+2. **Expose Jenkins to the Internet**
+   - Start Ngrok on port 8080 (default Jenkins port):
+     ```bash
+     ngrok http 8080
+     ```
+   - Copy the generated public URL (e.g., `http://<ngrok-generated-url>`).
+
+3. **Update Webhook with Ngrok URL**  
+   Replace `<ngrok-generated-url>` in the webhook configuration with the URL generated by Ngrok.
+
+---
+
+### Testing the Setup
+
+1. Push a new commit to the GitHub repository.
+2. Verify that the Jenkins job starts automatically and builds the Docker image.
+3. Check the Jenkins console logs to confirm the Docker image was pushed to your repository.
+
+
+
